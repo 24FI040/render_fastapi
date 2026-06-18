@@ -10,14 +10,9 @@ def omikuji():
     return {"result": get_omikuji()}
 
 #homepage
-@app.get("/index")
-def index():
-    return """
-    <html>
-        <head><title>Some HTML in here</title></head>
-        <body><h1>Look ma! HTML!</h1></body>
-    </html>
-    """
+@app.get("/homepagemaker")
+def homepage():
+    return get_homepage()
 
 #xmaspresent
 @app.post("/present")
