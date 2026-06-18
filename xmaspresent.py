@@ -1,8 +1,11 @@
 from pydantic import BaseModel
+from fastapi import APIRouter
 
 class Present(BaseModel):
     present: str
 
-@app.post("/present")
-async def give_present(present):
-    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
+router = APIRouter()
+
+@router.post("/xmaspresent")
+async def give_present(data: Present):
+    return {"response": f"サーバです。メリークリスマス！ {data.present}ありがとう。お返しはキャンディーです。"}
