@@ -16,6 +16,6 @@ def homepage():
     return get_homepage()
 
 # xmaspresent
-@app.post("/present")
+@app.post("/xmaspresent")
 async def give_present(data: Present):
     return make_response(data)
